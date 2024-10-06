@@ -91,6 +91,8 @@ const About = () => {
 //The newest version of React Router comes with so-called RELATIVE LINKS. 
 //We will examine this concept by looking at the Users component and its 
 //ABSOLUTE PATH /users/${user.id} which is used for the Link component.
+
+
 const Users = ({users}) => {
 
   return (
@@ -103,7 +105,10 @@ const Users = ({users}) => {
           {/* Using the Link component we pass the userid to the path=users route.
               /users/${user.id} becomes a dynamic path because we iterate the list
              
-             The newest version of React Router comes with so-called RELATIVE LINKS
+              The newest version of React Router comes with so-called RELATIVE LINKS
+              In previous versions of React Router, it was necessary to 
+              specify the entire path. However, in this version you can just use the 
+              nested path as relative path:
           */}
           <Link to={`/users/${user.id}`}> {/*This is nested absolute path. 
                                       Since the Users component is used for 
