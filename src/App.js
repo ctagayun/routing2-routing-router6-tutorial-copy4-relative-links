@@ -111,8 +111,9 @@ const Users = ({users}) => {
               nested path as relative path:
           */}
           <Link to={`/users/${user.id}`}> {/*This is nested absolute path. 
-                                      Since the Users component is used for 
-                                      the /users route, the Link in the Users 
+                                      Since the Users component (e.g. /users/$) is used for 
+                                      the /users route (e.g. Link to={`/USERS/${user.id}), 
+                                      the Link in the Users 
                                       component knows its current location and 
                                       does not need to create the whole top-level 
                                       part of the absolute path. Instead it 
