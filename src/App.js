@@ -21,11 +21,17 @@ const App = () => {
             <Route index element={<Home />} />
             <Route path="home" element={<Home /> } />
 
-            {/* Because the Users component is passed users list as prop
-             and iterates through the list it and create another path 
-             when :userid is passed thereby making a dynamic route (or path).
+            {/* Because the Users component is passed the  users list as prop and
+             iterates through the list it (dyamically) creates another path/Route here:
+                     <Route path=":userId" element={<User />}
+             when :userid is passed it creates an absolute path in the Link 
+             component in Users Component:
+
+                  <Link to={`/users/${user.id}`}> 
+                  
+             thereby making a dynamic route (or path).
              And because another path is created when we pass the :userid 
-             we can nest it under a the "parent route" */}
+             we can nest it under a the "parent route"  (see line 108*/}
             <Route path="users" element={<Users users={users} />}>
               <Route path=":userId" element={<User />} />
            </Route>
